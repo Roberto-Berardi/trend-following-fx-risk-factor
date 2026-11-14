@@ -31,7 +31,7 @@ with two conditions:
 | Signal timing | Computed at Friday close, position held the **following** week | Avoids look-ahead: we never trade at the price the signal used. |
 | Sample | January 2005 to the last complete week of the download | Longest common history. |
 | Holdout | **2024-01-01 onward**, opened once at the very end | Final, untouched test. |
-| Factor | Equal-weight basket of the 14 pairs: the 7 "buy" pairs held long, the 7 "sell" pairs held short | Fixed by currency logic, never fitted to the data. |
+| Factor | Equal-weight basket of all 14 pairs, each held long; weekly return = spot move + one week of carry | Each pair is quoted so that long = risk-on. Net exposure: long EUR, GBP, AUD; short JPY, CHF; USD and CAD cancel. Fixed by currency logic, never fitted to the data. |
 | Baseline | Sign of the factor's **52-week** return: long if positive, short if negative | Classic 12-month trend rule. |
 | Learned model | **Bagging** of decision trees (scikit-learn) | Can learn combinations of inputs, shows which inputs matter, few settings to tune. |
 | Target | Sign of next week's factor return (up = 1, down = 0) | Classification, as taught in week 6. |
@@ -44,11 +44,10 @@ with two conditions:
 
 ### The 14 pairs
 
-| Buy group (held long in the factor) | Sell group (held short in the factor) |
-|---|---|
-| CADJPY, AUDUSD, USDJPY, EURUSD, EURCHF, GBPJPY, USDCAD | GBPUSD, EURGBP, GBPCHF, CHFJPY, AUDJPY, EURJPY, USDCHF |
+CADJPY, AUDUSD, USDJPY, EURUSD, EURCHF, GBPJPY, USDCAD, GBPUSD, EURGBP, GBPCHF, CHFJPY, AUDJPY, EURJPY, USDCHF
 
-Net exposure of the factor: long EUR, GBP, AUD; short JPY, CHF; USD and CAD cancel out.
+Net exposure per unit invested: EUR +0.29, GBP +0.14, AUD +0.14, CHF -0.14, JPY -0.43, USD 0, CAD 0.
+Carry of the basket = exposure-weighted 3-month rate (percent per year).
 
 ## 3. Pipeline: what each notebook loads, does and saves
 
@@ -70,7 +69,7 @@ Shared functions (used in more than one notebook) live in `code/helpers.py`.
 **02_clean**
 - No missing values in the weekly table.
 - No date after the download date; the last week is complete.
-- Rebuilt AUDUSD (AUDJPY / USDJPY) matches the real AUDUSD after May 2006 (correlation of returns above 0.99).
+- Rebuilt AUDUSD (AUDJPY / USDJPY) matches the real AUDUSD after May 2006 (correlation of weekly returns above 0.99).
 - Monthly rates are lagged so a value is only used after it was published.
 - The factor falls in late 2008 and March 2020 (risk-off), as expected.
 
@@ -91,6 +90,8 @@ Shared functions (used in more than one notebook) live in `code/helpers.py`.
 - Publication lag for monthly rates: **2 months** (a value dated August is used from October).
 - Weekly series use the **Friday close**; if Friday is missing, the last available day of that week.
 - Unfinished days (on or after the download date in `data/raw/download_date.txt`) are dropped.
+- One-day price errors in the Yahoo data (a move above 3% that is at least 70% reversed the
+  next day) are removed and replaced by the previous price. 36 such days were found.
 
 ## 6. Change log
 
@@ -98,3 +99,5 @@ Shared functions (used in more than one notebook) live in `code/helpers.py`.
 |---|---|---|
 | 2026-11-14 | Plan written | Proposal approved |
 | 2026-11-14 | Stage 2 decisions settled (section 5) | Before writing the cleaning code |
+| 2026-11-14 | Factor redefined as the equal-weight basket of all 14 pairs held long | The two groups of 7 pairs have identical currency exposure, so "buy minus sell" is zero by construction. Found while checking the factor in stage 2, before any model was run. |
+| 2026-11-14 | One-day price error rule added to stage 2 | Yahoo FX history contains bad prints (e.g. EURUSD +17% on 8 Dec 2008, reversed next day). |
