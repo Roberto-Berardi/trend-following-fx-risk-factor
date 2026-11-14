@@ -11,3 +11,4 @@ venv/
 # Data: downloaded from Yahoo and FRED, recreated by the notebooks
 data/raw/
 data/processed/
+PLAN.md
