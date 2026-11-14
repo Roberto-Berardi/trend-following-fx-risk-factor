@@ -84,14 +84,17 @@ Shared functions (used in more than one notebook) live in `code/helpers.py`.
 - Every figure in the paper is produced here.
 - Results reported with and without 2008, with and without 2022, and with doubled costs.
 
-## 5. Open decisions (to settle in stage 2, before modelling)
+## 5. Decisions for stage 2 (settled 2026-11-14)
 
-- Three FRED series stop in January 2026 (EUR 3m, EUR 10y, GBP 3m). Choose a replacement
-  or carry the last value forward, and say so in the paper.
-- Publication lag used for monthly rates (planned: 2 months).
+- Three FRED series stop in January 2026 (EUR 3m, EUR 10y, GBP 3m): the last value is
+  carried forward. It affects about 10 months out of 21 years; stated in the paper.
+- Publication lag for monthly rates: **2 months** (a value dated August is used from October).
+- Weekly series use the **Friday close**; if Friday is missing, the last available day of that week.
+- Unfinished days (on or after the download date in `data/raw/download_date.txt`) are dropped.
 
 ## 6. Change log
 
 | Date | Change | Reason |
 |---|---|---|
 | 2026-11-14 | Plan written | Proposal approved |
+| 2026-11-14 | Stage 2 decisions settled (section 5) | Before writing the cleaning code |
