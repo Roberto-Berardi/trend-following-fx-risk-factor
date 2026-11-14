@@ -93,6 +93,17 @@ Shared functions (used in more than one notebook) live in `code/helpers.py`.
 - One-day price errors in the Yahoo data (a move above 3% that is at least 70% reversed the
   next day) are removed and replaced by the previous price. 36 such days were found.
 
+## 5b. Decisions for stages 3 and 4 (settled 2026-11-14)
+
+- Baseline signal: sign of the **total** factor return (spot + carry) over the last 52 weeks.
+- The model is retrained **once a year**, in January: train on all weeks before year Y, test on year Y.
+- Tuning grid: number of trees 100 or 300; maximum tree depth 2, 3 or 5 (6 combinations).
+  Each combination is scored by accuracy on the last 2 years of the training window; the best
+  is refit on the full training window.
+- Costs: 3 bp per unit of position change (long to short = 2 units = 6 bp).
+- Test years 2010 to 2023. Weeks from 2024-01-01 (holdout) are dropped at the start of the notebook.
+- Robustness to add in stage 5: rerun with the one-day price error rule switched off.
+
 ## 6. Change log
 
 | Date | Change | Reason |
@@ -101,3 +112,4 @@ Shared functions (used in more than one notebook) live in `code/helpers.py`.
 | 2026-11-14 | Stage 2 decisions settled (section 5) | Before writing the cleaning code |
 | 2026-11-14 | Factor redefined as the equal-weight basket of all 14 pairs held long | The two groups of 7 pairs have identical currency exposure, so "buy minus sell" is zero by construction. Found while checking the factor in stage 2, before any model was run. |
 | 2026-11-14 | One-day price error rule added to stage 2 | Yahoo FX history contains bad prints (e.g. EURUSD +17% on 8 Dec 2008, reversed next day). |
+| 2026-11-14 | Stage 3 and 4 decisions settled (section 5b) | Before writing the model code |
