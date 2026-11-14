@@ -1,0 +1,13 @@
+# Python and Jupyter clutter
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Mac and editor files
+.DS_Store
+.vscode/
+
+# Data: downloaded from Yahoo and FRED, recreated by the notebooks
+data/raw/
+data/processed/
