@@ -1,0 +1,5 @@
+,MSE,R2 vs naive,DM t-stat vs naive,p-value
+naive,0.396,0.0,,
+regression,0.263,0.336,8.677,0.0
+garch,0.32,0.191,4.931,0.0
+gp,0.314,0.207,3.182,0.001

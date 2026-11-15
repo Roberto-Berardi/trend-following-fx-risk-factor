@@ -1,0 +1,13 @@
+,return p.a.,volatility,Sharpe,worst loss,turnover p.a.
+Unhedged,0.093,0.182,0.582,-0.316,0.0
+Hedged,0.093,0.165,0.625,-0.32,0.0
+Unhedged + trend,0.097,0.182,0.6,-0.324,1.824
+Unhedged + model,0.094,0.185,0.579,-0.321,2.879
+Buy and hold,0.093,0.182,0.582,-0.316,0.0
+FX warning only,0.089,0.178,0.57,-0.32,0.427
+Equity vol target,0.056,0.142,0.456,-0.269,2.723
+Equity vol target + FX warning,0.054,0.142,0.442,-0.269,2.903
+Trend overlay alone,0.003,0.019,0.181,-0.036,1.824
+Model overlay alone,0.001,0.015,0.067,-0.063,2.879
+Plain carry,0.01,0.047,0.241,-0.123,0.0
+Vol-managed carry,0.007,0.062,0.142,-0.192,7.4

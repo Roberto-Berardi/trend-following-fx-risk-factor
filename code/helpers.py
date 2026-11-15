@@ -28,6 +28,8 @@ FRED_SERIES = {
 START = "2005-01-01"
 HOLDOUT_START = "2024-01-01"
 FIRST_TEST_YEAR = 2010
+# Last year used in testing. 2023 until the holdout is opened, once, at the very end.
+LAST_TEST_YEAR = 2023
 COST_BP = 3          # cost in basis points per unit of position change
 SEED = 42
 WEEKS_PER_YEAR = 52

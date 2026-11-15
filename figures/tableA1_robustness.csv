@@ -1,0 +1,6 @@
+,Unhedged + trend,Unhedged + model,Equity vol target + FX warning,Vol-managed carry
+Base case,0.6,0.579,0.442,0.142
+Costs doubled,0.597,0.574,0.431,0.107
+Without 2022,0.734,0.705,0.573,0.119
+Flat in stress (model),,0.575,,
+Price-error rule off (trend),0.6,,,
