@@ -1,7 +1,7 @@
 Job,Simple,Machine learning,Evidence,Winner
-1. Predict next week's direction,"Trend rule, Sharpe 0.18","Bagging, Sharpe 0.13, accuracy 50.0%",Accuracy vs 50%: p = 1.00; Sharpe difference p = 0.56,Simple
-2. Predict next week's volatility,Naive (same as last week),"Regression R2 0.35, GP 0.20","Diebold-Mariano vs naive: t = 9.9 (regression), 3.5 (GP)",Machine learning (regression)
-3a. Trade the factor as an overlay,"Trend overlay, portfolio Sharpe 0.366","Model overlay, portfolio Sharpe 0.346",Model vs unhedged p = 0.65; trend vs unhedged p = 0.31,Simple
-3b. Trade the factor on its own (carry),"Plain carry, Sharpe 0.14","Vol-managed carry, Sharpe 0.10",p = 0.77,Simple
-4. Protect in the worst equity quarters,Trend overlay saves 568 CHF a quarter,Model overlay saves -54 CHF; FX warning adds -92 CHF,"p = 0.22 (trend), 0.84 (model)",Neither significant
-5. Keep FX risk on a 2% budget,"Fixed exposure: quarterly risk varies by 1.31%, worst quarter 10.2%","Regression forecast: varies by 0.69%, worst quarter 4.8%","95% VaR breach rate: regression 8.8%, GARCH 5.0% (target 5%)",Machine learning (regression)
+1. Predict next week's direction,"Trend rule, Sharpe 0.18","Bagging, Sharpe 0.19, accuracy 49.7%",Always-up scores 51.5%; bagging better? p = 0.84; balanced accuracy 0.489; Sharpe difference p = 0.52,Tie (not significant)
+2. Predict next week's volatility,Naive (same as last week),"Regression R2 0.35, GP 0.21","Diebold-Mariano vs naive: t = 9.9 (regression), 3.8 (GP)",Machine learning (regression)
+3a. Trade the factor as an overlay,"Trend overlay, portfolio Sharpe 0.366","Model overlay, portfolio Sharpe 0.346",Model vs unhedged p = 0.62; trend vs unhedged p = 0.31,Simple
+3b. Trade the factor on its own (carry),"Plain carry, Sharpe 0.14","Vol-managed carry, Sharpe 0.09",p = 0.80,Simple
+4. Protect in the worst equity quarters,Trend overlay saves 646 CHF a quarter,Model overlay saves -54 CHF; FX warning adds 672 CHF,"p = 0.22 (trend), 0.85 (model)",Neither significant
+5. Keep FX risk on a 2% budget,"Fixed exposure: quarterly risk varies by 1.31%, worst quarter 10.2%","Regression forecast: varies by 0.62%, worst quarter 4.3%","95% VaR breach rate: regression 6.8%, GARCH 5.0% (target 5%)",Machine learning (regression)

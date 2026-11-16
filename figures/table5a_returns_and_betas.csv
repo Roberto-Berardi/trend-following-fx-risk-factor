@@ -1,13 +1,13 @@
-,mean p.a.,t-stat,p-value,beta to S&P (CHF),beta t-stat
-Unhedged,0.071,1.591,0.112,1.0,
-Hedged,0.075,1.794,0.073,0.793,16.563
-Unhedged + trend,0.073,1.664,0.096,0.987,99.557
-Unhedged + model,0.071,1.567,0.117,1.02,185.045
-Buy and hold,0.071,1.591,0.112,1.0,
-FX warning only,0.063,1.541,0.123,0.875,26.155
-Equity vol target,0.043,1.325,0.185,0.67,18.487
-Equity vol target + FX warning,0.039,1.255,0.209,0.624,13.8
-Trend overlay alone,0.002,0.433,0.665,-0.013,-1.354
-Model overlay alone,0.0,0.111,0.912,0.02,3.568
+,mean (excess) p.a.,t-stat,p-value,beta to S&P (CHF),beta t-stat
+Unhedged,0.07,1.581,0.114,1.0,
+Hedged,0.074,1.784,0.074,0.793,16.563
+Unhedged + trend,0.073,1.663,0.096,0.985,87.394
+Unhedged + model,0.071,1.564,0.118,1.02,184.545
+Buy and hold,0.07,1.581,0.114,1.0,
+FX warning only,0.062,1.601,0.109,0.825,25.774
+Equity vol target,0.042,1.313,0.189,0.67,18.487
+Equity vol target + FX warning,0.037,1.225,0.22,0.596,13.314
+Trend overlay alone,0.003,0.433,0.665,-0.015,-1.354
+Model overlay alone,0.001,0.171,0.865,0.02,3.544
 Plain carry,0.008,0.593,0.553,0.131,7.946
-Vol-managed carry,0.006,0.39,0.697,0.138,10.157
+Vol-managed carry,0.005,0.368,0.713,0.122,10.139
