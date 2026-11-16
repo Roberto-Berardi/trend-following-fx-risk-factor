@@ -24,10 +24,25 @@ FRED_SERIES = {
     "VIX": "VIXCLS",
 }
 
+# Daily FRED exchange rates (New York noon), used for the 1999-2004 training history.
+# Each gives a pair against the US dollar; the 14 pairs are built from them.
+FRED_FX = {
+    "EURUSD": "DEXUSEU",   # USD per EUR
+    "USDJPY": "DEXJPUS",   # JPY per USD
+    "USDCHF": "DEXSZUS",   # CHF per USD
+    "GBPUSD": "DEXUSUK",   # USD per GBP
+    "AUDUSD": "DEXUSAL",   # USD per AUD
+    "USDCAD": "DEXCAUS",   # CAD per USD
+}
+
+# Overnight (call) rates used to fill the start of the CHF and JPY 3-month series
+FRED_BACKFILL = {"CHF_CALL": "IRSTCI01CHM156N", "JPY_CALL": "IRSTCI01JPM156N"}
+
 # Fixed choices (see PLAN.md)
-START = "2005-01-01"
+HISTORY_START = "1999-01-01"   # FRED history and S&P 500
+START = "2005-01-01"           # Yahoo currency pairs
 HOLDOUT_START = "2024-01-01"
-FIRST_TEST_YEAR = 2010
+FIRST_TEST_YEAR = 2007
 # Last year used in testing. 2023 until the holdout is opened, once, at the very end.
 LAST_TEST_YEAR = 2023
 COST_BP = 3          # cost in basis points per unit of position change
