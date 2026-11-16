@@ -50,9 +50,18 @@ SEED = 42
 WEEKS_PER_YEAR = 52
 
 
-def sharpe_ratio(weekly_returns):
-    # Annualised Sharpe ratio from weekly returns
-    return weekly_returns.mean() / weekly_returns.std() * np.sqrt(WEEKS_PER_YEAR)
+def sharpe_ratio(weekly_returns, risk_free=0.0):
+    # Annualised Sharpe ratio from weekly returns. For portfolios that hold cash or equities,
+    # pass the weekly risk-free return (CHF rate); self-financing overlays use zero.
+    excess = weekly_returns - risk_free
+    return excess.mean() / excess.std() * np.sqrt(WEEKS_PER_YEAR)
+
+
+def overlay_size(weekly_factor, risk_budget=0.02):
+    # Fixed exposure that gives the factor the target risk, measured only on the years
+    # before the test window (no information from the test years)
+    before = weekly_factor[weekly_factor.index.year < FIRST_TEST_YEAR]
+    return risk_budget / (before.std() * np.sqrt(WEEKS_PER_YEAR))
 
 
 def max_drawdown(weekly_returns):
