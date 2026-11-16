@@ -10,12 +10,12 @@ crashes. This project asks whether following the factor's trend turns it into cr
 and whether machine learning beats a fixed trend rule, judged from the point of view of a Swiss
 investor holding 100,000 CHF of the S&P 500.
 
-The fixed 52-week trend rule is compared with a learned direction model (bagging). Because
-direction proves unpredictable, the learned models then forecast next week's volatility (linear
-regression, Gaussian process, with GARCH as a benchmark), which is used to size positions, to
-identify market regimes (Gaussian mixtures) and for risk management (VaR, risk budgeting).
-Everything is evaluated walk-forward: test years 2007 to 2023, with 2024 to 2026 held out until
-the end.
+The fixed 52-week trend rule is compared with a learned direction model (bagging). The bagging
+model cannot predict direction, so the next step forecasts next week's volatility instead (linear
+regression and a Gaussian process, with GARCH as a benchmark). The forecasts size the positions
+and feed the risk tests (VaR and a risk budget), and a Gaussian mixture labels market regimes.
+All models are evaluated walk-forward on the test years 2007 to 2026. The last three years
+(2024 to 2026) were held out and opened only once, at the end.
 
 ## How to run it
 

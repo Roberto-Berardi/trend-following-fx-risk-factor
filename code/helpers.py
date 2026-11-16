@@ -38,7 +38,7 @@ FRED_FX = {
 # Overnight (call) rates used to fill the start of the CHF and JPY 3-month series
 FRED_BACKFILL = {"CHF_CALL": "IRSTCI01CHM156N", "JPY_CALL": "IRSTCI01JPM156N"}
 
-# Fixed choices (see PLAN.md)
+# Fixed choices, set before any result was seen
 HISTORY_START = "1999-01-01"   # FRED history and S&P 500
 START = "2005-01-01"           # Yahoo currency pairs
 HOLDOUT_START = "2024-01-01"
@@ -58,8 +58,8 @@ def sharpe_ratio(weekly_returns, risk_free=0.0):
 
 
 def overlay_size(weekly_factor, risk_budget=0.02):
-    # Fixed exposure that gives the factor the target risk, measured only on the years
-    # before the test window (no information from the test years)
+    # Fixed exposure that gives the factor the target risk. The volatility is measured on the
+    # years before the test window only, so nothing from the test years is used.
     before = weekly_factor[weekly_factor.index.year < FIRST_TEST_YEAR]
     return risk_budget / (before.std() * np.sqrt(WEEKS_PER_YEAR))
 
