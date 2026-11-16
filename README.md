@@ -31,7 +31,7 @@ the end.
       the risk-management tests (VaR, risk budget)
    5. `05_figures.ipynb` produces every figure and table in `figures/`, with the statistical tests
 
-Run time: about 15 minutes in total on a laptop, most of it in `04_volatility.ipynb` (to be confirmed in Nuvolos).
+Run time: about 10 minutes in total in the Nuvolos workspace, most of it in `04_volatility.ipynb`.
 
 All settings (sample, test years, costs, random seed) are in `code/helpers.py`.
 
