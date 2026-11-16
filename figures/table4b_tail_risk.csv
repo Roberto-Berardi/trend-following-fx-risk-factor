@@ -1,13 +1,13 @@
 ,skewness,worst week,expected shortfall 5%,downside beta,longest drawdown (weeks)
-Unhedged,-0.643,-0.171,-0.068,1.0,384.0
-Hedged,-0.604,-0.182,-0.062,0.783,302.0
-Unhedged + trend,-0.706,-0.188,-0.068,0.986,378.0
-Unhedged + model,-0.677,-0.183,-0.069,1.022,385.0
-Buy and hold,-0.643,-0.171,-0.068,1.0,384.0
-FX warning only,-0.885,-0.172,-0.059,0.809,375.0
-Equity vol target,-1.226,-0.156,-0.05,0.656,384.0
-Equity vol target + FX warning,-1.415,-0.156,-0.048,0.58,384.0
-Trend overlay alone,0.688,-0.016,-0.008,-0.014,369.0
-Model overlay alone,-0.478,-0.012,-0.005,0.022,842.0
-Plain carry,-1.27,-0.068,-0.019,0.164,442.0
-Vol-managed carry,-0.725,-0.045,-0.02,0.155,474.0
+Unhedged,-0.668,-0.171,-0.066,1.0,384.0
+Hedged,-0.602,-0.182,-0.06,0.776,302.0
+Unhedged + trend,-0.728,-0.188,-0.066,0.989,378.0
+Unhedged + model,-0.699,-0.183,-0.068,1.022,385.0
+Buy and hold,-0.668,-0.171,-0.066,1.0,384.0
+FX warning only,-0.881,-0.172,-0.058,0.822,375.0
+Equity vol target,-1.183,-0.156,-0.049,0.666,384.0
+Equity vol target + FX warning,-1.336,-0.156,-0.047,0.595,384.0
+Trend overlay alone,0.655,-0.016,-0.008,-0.011,369.0
+Model overlay alone,-0.473,-0.012,-0.005,0.022,862.0
+Plain carry,-1.288,-0.068,-0.019,0.156,442.0
+Vol-managed carry,-0.691,-0.045,-0.019,0.149,486.0
