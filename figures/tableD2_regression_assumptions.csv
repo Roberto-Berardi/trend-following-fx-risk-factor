@@ -1,0 +1,9 @@
+,regression errors
+mean error (bias),0.016
+standard deviation,0.529
+"autocorrelation, lag 1",0.064
+Ljung-Box p (4 lags),0.216
+Breusch-Pagan p (errors vs forecast),0.863
+skewness,-0.303
+excess kurtosis,0.411
+Jarque-Bera p (normality),0.0
