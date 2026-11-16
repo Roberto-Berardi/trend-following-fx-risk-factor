@@ -43,8 +43,8 @@ HISTORY_START = "1999-01-01"   # FRED history and S&P 500
 START = "2005-01-01"           # Yahoo currency pairs
 HOLDOUT_START = "2024-01-01"
 FIRST_TEST_YEAR = 2007
-# Last year used in testing. 2023 until the holdout is opened, once, at the very end.
-LAST_TEST_YEAR = 2023
+# Last year used in testing. The holdout (2024-2026) was opened once, on 2026-11-16.
+LAST_TEST_YEAR = 2026
 COST_BP = 3          # cost in basis points per unit of position change
 SEED = 42
 WEEKS_PER_YEAR = 52
