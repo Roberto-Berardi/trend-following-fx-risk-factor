@@ -17,7 +17,21 @@ and feed the risk tests (VaR and a risk budget), and a Gaussian mixture labels m
 All models are evaluated walk-forward on the test years 2007 to 2026. The last three years
 (2024 to 2026) were held out and opened only once, at the end.
 
+Main findings:
+
+- The direction of the factor cannot be predicted: bagging is right 51.5% of the time, below the
+  53.3% of always predicting a rise, and the trend rule's good record before 2007 does not continue.
+- Next week's volatility can be predicted: a linear regression on past volatility and the VIX cuts
+  the error of a naive forecast by 36% and beats a Gaussian process and GARCH.
+- The FX overlay does not protect the investor in crises, but the volatility forecast halves the
+  variation of the risk taken on a 2% risk budget. Simple models do at least as well as complex ones.
+
+The full analysis is in the paper, `Paper_Roberto_Berardi.pdf`.
+
 ## How to run it
+
+The code was tested in the Nuvolos workspace of the course and locally with Python 3.13.
+The first notebook needs an internet connection to download the data.
 
 1. Install the packages:
    ```
@@ -52,5 +66,10 @@ The data files are not stored in this repository (see `data/README.md`). The fir
 
 - `code/`: one notebook per stage, plus `helpers.py` for shared settings and functions
 - `data/`: downloaded and processed data (created when the notebooks run)
-- `figures/`: figures used in the paper
-- `paper.pdf`: the paper (added at the end)
+- `figures/`: every figure (PNG) and table (CSV) produced by the code, including those not shown in
+  the paper; Appendix B of the paper says which file is behind each table and figure
+- `Paper_Roberto_Berardi.pdf`: the paper
+
+## Use of AI tools
+
+The use of AI tools in this project is declared in Appendix A of the paper.
