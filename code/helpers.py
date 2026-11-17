@@ -42,6 +42,9 @@ FRED_BACKFILL = {"CHF_CALL": "IRSTCI01CHM156N", "JPY_CALL": "IRSTCI01JPM156N"}
 HISTORY_START = "1999-01-01"   # FRED history and S&P 500
 START = "2005-01-01"           # Yahoo currency pairs
 HOLDOUT_START = "2024-01-01"
+# Fixed end of the sample, so every rerun uses the same weeks. Data is cut before this day:
+# the last week used ends on Friday 13 November 2026.
+END = "2026-11-14"
 FIRST_TEST_YEAR = 2007
 # Last year used in testing. The holdout (2024-2026) was opened once, on 2026-11-16.
 LAST_TEST_YEAR = 2026

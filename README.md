@@ -43,8 +43,8 @@ All settings (sample, test years, costs, random seed) are in `code/helpers.py`.
   FRED, Federal Reserve Bank of St. Louis (H.10 noon rates).
 - Short- and long-term interest rates, overnight rates and the VIX: FRED.
 
-Weekly data, Friday close. The holdout years 2024 to 2026 run to the last complete week before
-the download date.
+Weekly data, Friday close. The sample ends on Friday 13 November 2026 (fixed in `code/helpers.py`),
+so a later download gives the same weeks.
 
 The data files are not stored in this repository (see `data/README.md`). The first notebook downloads them.
 
