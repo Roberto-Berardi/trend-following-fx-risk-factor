@@ -4,4 +4,4 @@ Job,Simple,Machine learning,Evidence,Winner
 3a. Trade the factor as an overlay,"Trend overlay, portfolio Sharpe 0.432","Model overlay, portfolio Sharpe 0.417",Model vs unhedged p = 0.47; trend vs unhedged p = 0.28,Simple
 3b. Trade the factor on its own (carry),"Plain carry, Sharpe 0.22","Vol-managed carry, Sharpe 0.21",p = 0.63,Simple
 4. Protect in the worst equity quarters,Trend overlay saves 505 CHF a quarter,Model overlay saves 28 CHF; FX warning adds 569 CHF,"p = 0.26 (trend), 0.90 (model)",Neither significant
-5. Keep FX risk on a 2% budget,"Fixed exposure: quarterly risk varies by 1.26%, worst quarter 10.2%","Regression forecast: varies by 0.63%, worst quarter 4.3%","95% VaR breach rate: regression 6.1%, GARCH 4.6% (target 5%)",Machine learning (regression)
+5. Keep FX risk on a 2% budget,"Fixed exposure: quarterly risk varies by 1.26%, worst quarter 10.2%","Regression forecast: varies by 0.63%, worst quarter 4.3%",Risk variation is the test; 95% VaR breach rate (target 5%) is the same for regression 6.1% and fixed 6.1%,Machine learning (regression)

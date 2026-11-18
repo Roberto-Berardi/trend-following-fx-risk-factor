@@ -1,5 +1,5 @@
 ,quarters,avg CHF saved per quarter,t-stat,p-value
-Unhedged + trend vs Unhedged,13.0,505.293,1.195,0.255
-Unhedged + model vs Unhedged,13.0,27.844,0.128,0.901
+Unhedged + trend vs Unhedged,13.0,505.277,1.194,0.255
+Unhedged + model vs Unhedged,13.0,27.823,0.127,0.901
 Equity vol target vs Buy and hold,13.0,3475.604,2.57,0.025
 Equity vol target + FX warning vs Equity vol target,13.0,568.944,1.053,0.313

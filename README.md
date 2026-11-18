@@ -58,7 +58,9 @@ All settings (sample, test years, costs, random seed) are in `code/helpers.py`.
 - Short- and long-term interest rates, overnight rates and the VIX: FRED.
 
 Weekly data, Friday close. The sample ends on Friday 13 November 2026 (fixed in `code/helpers.py`),
-so a later download gives the same weeks.
+so a later download gives the same weeks. The values themselves can change slightly, because FRED
+and Yahoo sometimes revise past data; the saved outputs in the notebooks and in `figures/` are the
+ones reported in the paper (data downloaded on 18 November 2026).
 
 The data files are not stored in this repository (see `data/README.md`). The first notebook downloads them.
 
